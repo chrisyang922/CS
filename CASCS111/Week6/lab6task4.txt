@@ -1,0 +1,18 @@
+#
+# lab6task4.txt (Lab 6, Task 3)
+#
+
+00   read r1          # get user's first # and store it in r1
+01   read r2          # get user's second # and store it in r2 
+02   call r14 5             # space for future expansion!
+03   write r10
+04   halt
+05   setn r10 0
+06   sub r3 r2 r1     # r3 = r2 - r1 
+07   add r10 r10 r1
+08   write r1         # print the value of r1
+09   jeqz r3 12       # halt if r1 == r2
+10   addn r1 1        # add 1 to r1
+11   jumpn 06         # jump to line 05   
+12   jumpr r14
+            # end the program
