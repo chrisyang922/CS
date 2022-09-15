@@ -1,0 +1,55 @@
+1.
+
+       w       |   scored_words
+----------------------------------
+      ‘do’     |  [[‘o’, ‘do’], 
+      ‘you’    |  [[‘o’, ‘do’], [‘u’, ‘you’], 
+ ‘comprehend’  |  [[‘o’, ‘do’], [‘u’, ‘you’], [‘d’, ‘comprehend’],
+     ‘this’    |  [[‘o’, ‘do’], [‘u’, ‘you’], [‘d’, ‘comprehend’], [’s’, ‘this’]]
+
+2. [‘u’, ‘you’] is the value assigned to variable best_pair
+3. ‘you’ is returned by the call to mystery1
+4. 
+
+mystery2('amazes', 'a')
+-----------------------
+    s = 'amazes'
+    c = 'a'
+    result_rest = mystery2('mazes', 'a') = ‘asezm’
+    return ‘aasezm’
+
+    mystery2('mazes', 'a')
+    ----------------------
+        s = 'mazes'
+        c = 'a'
+        result_rest = mystery2(‘azes’, ‘a’) = ‘asez’
+        return ‘asezm’
+
+        mystery2(‘azes’, ‘a’)
+        ----------------------
+            s = ‘azes’
+            c = ‘a’
+            result_rest = mystery2(‘zes’, ‘a’) = ‘sez’
+            return ‘asez’
+
+		mystery2(‘zes’, ‘a’)
+        	----------------------
+            	s = ‘zes’
+            	c = ‘a’
+            	result_rest = mystery2(‘es’, ‘a’) = ‘se’
+            	return ‘sez’
+			
+			mystery2(‘es’, ‘a’)
+       			----------------------
+            		s = ‘es’
+            		c = ‘a’
+            		result_rest = mystery2(’s’, ‘a’) = ’s’
+            		return ’se’
+
+				mystery2(’s’, ‘a’)
+        			----------------------
+            			s = ’s’
+            			c = ‘a’
+            			return ’s’
+
+5. The final result of the call mystery2(‘amazes’, ‘a’) is ‘aasezm’
