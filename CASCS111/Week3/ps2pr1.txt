@@ -1,0 +1,32 @@
+global variables (ones that belong to the global scope)
+  a  |  b  |  c  |  d  
+-----------------------
+  1  |  2  |  3  |  4
+  1  |  2  |  3  |  6
+
+hello's local variables
+  a  |  b  |  c  |  d  
+-----------------------
+  1  |  2  |  6  |  4
+  1  |  2  |  6  |  6
+
+goodbye's local variables
+  a  |  c  |  b
+-----------------
+  4  |  2  |  
+  4  |  2  |  6
+
+adios's local variables
+  a  |  b  |  c  |  d  
+-----------------------
+  4  |  4  |  2  |  2
+  6  |  4  |  2  |  3
+
+
+output (the lines printed by the program)
+------
+1 2 3 4
+4 4 2 2
+6 4 2 3
+hello 1 2 6 6 
+1 2 3 6
