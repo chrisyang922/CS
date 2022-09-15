@@ -1,0 +1,42 @@
+1. 
+line of code   | a  | b  | c  |
+--------------------------------
+a = 10         | 10 |    |    |
+b = 3          | 10 | 3  |    |   
+c = b + 5      | 10 | 3  | 8  |
+b = b ** 2     | 10 | 9  | 8  |
+a = a // 4     | 2  | 9  | 8  |
+b = b % 4      | 2  | 1  | 8  |
+
+2. 
+a. x = 10 + y
+b. y == 2 * x
+c. y = 3 * y
+d. y ** 3
+e. x >= 3 and x <= 15
+
+3. 
+a. 
+now
+how
+row
+
+b.
+now
+bow
+row
+
+c.
+mow
+low
+pow
+row
+
+d. 
+wow
+row
+
+e. 
+low
+pow
+row

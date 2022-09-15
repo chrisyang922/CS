@@ -1,0 +1,5 @@
+The article states that, whether in science or business, we “don’t have to settle for models at all.” Do you agree or disagree with this statement? How? And why? Certainly feel free to articulate a more nuanced or hybrid view, if you’d like.
+
+Name: Jeongyong (Chris) Yang
+
+I agree with the article that people do not need to settle for models anymore, due to the inaccuracy of them, despite its usefulness. After the realization that the models are not beneficial and are incorrect, there is no reason for humans to stick with the model, especially when there are alternatives. With the development of sophisticated programming by varieties of companies (such as Google that the article mentioned) that finds the correlation between variables, the necessity of models have shrunk. What is more useful about the programming is that it not only uses existing data to maximize the accuracy, but also deals with numerous types of variables, depending on every situation, unlike models which can only look for correlation for given set of variables.  
