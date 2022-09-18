@@ -1,0 +1,221 @@
+
+1.
+
+unsigned replace_byte(unsigned x, int i, unsigned char b)
+{
+        unsigned int makeZero = 0xFF;
+        makeZero = makeZero << i * 8;
+        makeZero = ~makeZero;
+        unsigned int temp = b << i * 8;
+        unsigned int answer = (x & makeZero) | temp;
+        return answer;
+}
+
+2A. 
+
+int questionTwoPartA(int x)
+{
+        return (!!x);
+}
+
+2B.
+
+int questionTwoPartB(int x)
+{
+        return (!!(~x));
+}
+
+2C. 
+
+int questionTwoPartC(int x)
+{
+        return !!(x & 0xFF);
+}
+
+2D. 
+
+int questionTwoPartD(int x)
+{
+	int mostSignificant = x>>(3*8);
+	mostSignificant = ~mostSignificant;
+        return !!(mostSignificant & 0xFF);
+}
+
+3. 
+
+int any_odd_one(unsigned x)
+{
+        unsigned int oddBitOne = 0xAAAAAAAA;
+        unsigned int value = oddBitOne & x;
+        return !!value;
+}
+
+4A. 
+
+There are few errors in this code. The question states that we need the
+bytes to be signed instead of being unsigned. However, if we put an and operator at the end to 0xFF to a 32 bit(4 byte) integer, the first 24 values of the returned value will automatically be 0 since 0xFF has 24 bits of 0 prior to 8 bits of 1. This is because you are conducting an and operator to 0s, which automatically makes the value to 0. Therefore, the first digit is always going to 0, preventing it from becoming negative when the value has to be and preventing the data to be signed.
+
+
+4B.
+
+int xbyte(packed_t word, int bytenum)
+{
+        typedef unsigned packed_t;
+        int rightShift = word <<((3-bytenum)<<3);
+        int leftShift = rightShift >>(3*8);
+        return leftShift;
+}
+
+5. 
+
+int tsub_ok(int x, int y)
+{
+        int value = ~y+0x01;
+        int one = !(x & INT_MIN) && !(value & INT_MIN) && ((x + value) & INT_MIN);
+        int two = (x & INT_MIN) && (value & INT_MIN) && !((x + value) & INT_MIN);
+        int answer = !one && !two;
+        return answer;
+}
+
+6.
+
+(a) (010101)2 to base 10
+
+Answer: 1*2^0 + 1*2^2 + 1*2^4 = 1+4+16 = 21
+
+(b)  (011100)2 to base 16
+
+	1*2^2 + 1*2^3 + 1*2^4 = 4+8+16 = 28
+	
+	28 to hexadecimal
+	
+	28/16 = 1 R 12
+	1/16 = 0 R 1
+	
+Answer: 1C
+
+(c) (54.125)10 to binary
+
+	54/2 = 27 R 0
+	27/2 = 13 R 1
+	13/2 = 6 R 1
+	6/2 = 3 R 0
+	3/2 = 1 R 1
+	1/2 = 0 R 1
+	
+	110110
+
+	.125 * 2 = 0.250
+	0.250 * 2 = 0.500
+	0.500 * 2 = 1.000
+
+	0.001
+
+Answer: 110110.001
+
+(d) (122.3)4 to base 16
+
+	1*4^2 + 2*4^1 + 2*4^0 = 16+8+2 = 26
+	3 * 4^-1 = 0.75
+
+	26.75 to hexadecimal
+
+	26/16 = 1 R 10
+	10/16 = 0 R 10
+	
+	1A
+
+	0.75 * 16 = 12.0
+
+	C
+
+Answer: 1A.C
+
+7.
+
+(a) 
+
+	11110
+       +11101
+       ———————
+       111011
+
+Overflow does not occur
+
+(b) 
+
+	10111
+       +10111
+       ———————
+       101110
+
+Overflow does occur
+
+(c)
+
+	11111
+       +01011
+       ———————
+       101010
+
+Overflow does not occur
+
+8. 
+
+char c = 35;
+char d = ’G’;
+int x = -42;
+
+char c = 35;
+
+35/2 = 17 R 1
+17/2 = 8 R 1
+8/2 = 4 R 0 
+4/2 = 2 R 0
+2/2 = 1 R 0
+1/2 = 0 R 1
+
+char c = 35; is 00100011
+
+char d = ‘G’;
+G is 71 in ASCII
+
+71/2 = 35 R 1
+35/2 = 17 R 1
+17/2 = 8 R 1
+8/2 = 4 R 0 
+4/2 = 2 R 0
+2/2 = 1 R 0
+1/2 = 0 R 1
+
+char d = ‘G’; is 01000111
+
+int x = -42;
+
+42/2 = 21 R 0
+21/2 = 10 R 1
+10/2 = 5 R 0
+5/2 = 2 R 1
+2/2 = 1 R 0
+1/2 = 0 R 1
+
+00101010 
+Since it is -42, if we apply two’s complement, it becomes 11010110
+If we change it hexadecimal,
+1101 = 1*2^3 + 1*2^2 + 1*2^0 = 8+4+1 = 13, which is D
+0110 = 1*2^2 + 1*2^1 = 4+2 = 6, which is 6
+
+int x = -42; is 0xFFFFFFD6 
+
+9. 
+
+#include <stdio.h>
+main()
+{
+  char n[4];
+  int x;
+  printf("Enter a 3-digit non-negative number: ");
+  scanf("%s", n);
+  x = 100*(n[0] - 48) + 10*(n[1] - 48) + (n[2] - 48);
+  printf("The number is %d\n", x);
+}
