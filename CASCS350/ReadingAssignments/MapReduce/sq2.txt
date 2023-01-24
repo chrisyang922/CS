@@ -1,0 +1,1 @@
+According to the text, it states that we can sometimes ignore the bugs instead of debugging the code due to the error in the third-party library. How are users aware of the fact that the error does not exist in their code but on other libraries and what actions do they need to take after understanding that bugs exist on other libraries?
