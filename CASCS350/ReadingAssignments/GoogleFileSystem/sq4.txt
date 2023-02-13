@@ -1,0 +1,1 @@
+How does GFS protect itself from potential attack (hack) from malicious adversaries that try to delete the data or launch attacks to the users accessing the data (for example ransomware attacks)? 
