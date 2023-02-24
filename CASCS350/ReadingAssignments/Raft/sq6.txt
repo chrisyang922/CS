@@ -1,0 +1,1 @@
+How does Raft protect itself from possible security threats such as users that try to take over the system or adversaries that purposefully launch DoS attack to break the communication between servers since Raft relies on servers communicating with each other? 
