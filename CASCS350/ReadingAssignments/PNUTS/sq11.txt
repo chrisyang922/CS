@@ -1,0 +1,1 @@
+According to the text, PNUTS includes lots of replicas that allows users in different geographical locations to access the database. How does it take care of moving large amount of data from one replica to another?
