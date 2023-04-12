@@ -1,0 +1,1 @@
+Spark can support applications that involve iterative algorithms and interactive data mining tools unlike MapReduce. In addition, regarding iterative applications, Spark is much faster than Hadoop, which is very beneficial in the real world. Therefore, it outperforms applications that involve machine learning and graph applications better than Hadoop and MapReduce.

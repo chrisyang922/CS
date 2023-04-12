@@ -1,0 +1,1 @@
+The paper discusses that Spark can be used in machine learning. Therefore, how is Spark useful when training the datasets and how is it beneficial when doing deep learning or NLP (natural language process)?
