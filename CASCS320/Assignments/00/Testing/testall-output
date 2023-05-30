@@ -1,0 +1,90 @@
+use "assign00-01-test.sml";
+exception MyAssertExn
+exception MyErrorExn
+exception MyNotImplementedExn
+val chr = fn: int -> char
+val ord = fn: char -> int
+val str = fn: char -> string
+val strcat = fn: string * string -> string
+val strlen = fn: string -> int
+val strsub = fn: string * int -> char
+val it = (): unit
+val fact = fn: int -> int
+val myans = 21: int
+val myloop = fn: int -> int
+val it = (): unit
+Assign00-01-test passed!
+val it = (): unit
+
+use "assign00-02-test.sml";
+exception MyAssertExn
+exception MyErrorExn
+exception MyNotImplementedExn
+val chr = fn: int -> char
+val ord = fn: char -> int
+val str = fn: char -> string
+val strcat = fn: string * string -> string
+val strlen = fn: string -> int
+val strsub = fn: string * int -> char
+val it = (): unit
+val isPrime = fn: int -> bool
+val myans1 = true: bool
+val myans2 = true: bool
+val it = (): unit
+Assign00-02-test passed!
+val it = (): unit
+
+use "assign00-03-test.sml";
+exception MyAssertExn
+exception MyErrorExn
+exception MyNotImplementedExn
+val chr = fn: int -> char
+val ord = fn: char -> int
+val str = fn: char -> string
+val strcat = fn: string * string -> string
+val strlen = fn: string -> int
+val strsub = fn: string * int -> char
+val it = (): unit
+exception MyAssertExn
+val assert = fn: bool -> unit
+val int2str = fn: int -> string
+val myans2 = "12345": string
+val it = (): unit
+Assign00-03-test passed!
+val it = (): unit
+
+use "assign00-04-test.sml";
+exception MyAssertExn
+exception MyErrorExn
+exception MyNotImplementedExn
+val chr = fn: int -> char
+val ord = fn: char -> int
+val str = fn: char -> string
+val strcat = fn: string * string -> string
+val strlen = fn: string -> int
+val strsub = fn: string * int -> char
+val it = (): unit
+val myans1 = 12345: int
+val myans2 = 98765: int
+val str2int = fn: string -> int
+val it = (): unit
+Assign00-04-test passed!
+val it = (): unit
+
+use "assign00-05-test.sml";
+exception MyAssertExn
+exception MyErrorExn
+exception MyNotImplementedExn
+val chr = fn: int -> char
+val ord = fn: char -> int
+val str = fn: char -> string
+val strcat = fn: string * string -> string
+val strlen = fn: string -> int
+val strsub = fn: string * int -> char
+val it = (): unit
+val myans1 = "ytrewq": string
+val myans2 = "sirhc": string
+val stringrev = fn: string -> string
+val it = (): unit
+Assign00-05-test passed!
+val it = (): unit
