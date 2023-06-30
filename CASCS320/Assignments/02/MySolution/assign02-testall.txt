@@ -1,0 +1,999 @@
+assign02-01-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val find_root = fn: (int -> int) -> int
+val it = (): unit
+Assign02-01-test passed!
+val it = (): unit
+
+assign02-02-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val list_range = fn: int * int -> int list
+val it = (): unit
+Assign02-02-test passed!
+val it = (): unit
+
+assign02-03-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val list_tabulate = fn: int * (int -> 'a) -> 'a list
+val it = (): unit
+Assign03-03-test passed!
+val it = (): unit
+
+assign02-04-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_length = fn: 'a list -> int
+val list_longest_ascend = fn: int list -> int list
+val it = (): unit
+assign02-04-test.sml:47: error: <identifier> expected but ) was found
+Exception- Fail "Static Errors" raised
+> use "assign02-04-test.sml";
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_length = fn: 'a list -> int
+val list_longest_ascend = fn: int list -> int list
+val it = (): unit
+Assign02-04-test passed!
+val xs = [4, 1, 2, 1, 3, 8, 9, 5, 6, 7, ...]: int list
+val it = (): unit
+
+assign02-05-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val int1_forall = fn: int * (int -> bool) -> bool
+val isPrime = fn: int -> bool
+val it = (): unit
+Assign02-05-test passed!
+val it = (): unit
+
+assign02-06-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_subsets = fn: 'a list -> 'a list list
+val it = (): unit
+Assign02-06-test passed!
+val power = fn: int * int -> int
+val xs = [1, 2, 3, 4, 5]: int list
+val xss =
+   [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3], [4], [1, ...], ...]:
+   int list list
+val it = (): unit
+
+assign02-07-test.sml
+
+val @ = fn: 'a list * 'a list -> 'a list
+exception ConsMatch320
+exception ERROR320 of string optn
+exception ListSubscript320
+exception NotImplemented320
+exception OptnSubscript320
+val abs_int = fn: int -> int
+val assert320 = fn: bool -> unit
+val assert320_some = fn: bool * string -> unit
+val char_of_digit = fn: int -> char
+val foldleft_to_length = fn:
+   ('a * int * (int * 'b -> int) -> int) -> 'a -> int
+val forall_to_foreach = fn:
+   ('a * ('b -> bool) -> bool) -> 'a * ('b -> unit) -> unit
+val foreach_to_foldleft = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * 'c * ('c * 'b -> 'c) -> 'c
+val foreach_to_forall = fn:
+   ('a * ('b -> unit) -> unit) -> 'a * ('b -> bool) -> bool
+val foreach_to_length = fn: ('a * ('b -> unit) -> unit) -> 'a -> int
+val hd = fn: 'a list -> 'a
+val int0_foreach = fn: int * (unit -> unit) -> unit
+val int1_foldleft = fn: int * 'a * ('a * int -> 'a) -> 'a
+val int1_foldright = fn: int * 'a * (int * 'a -> 'a) -> 'a
+val int1_forall = fn: int * (int -> bool) -> bool
+val int1_foreach = fn: int * (int -> unit) -> unit
+val int_max = fn: int * int -> int
+val int_min = fn: int * int -> int
+val list_append = fn: 'a list * 'a list -> 'a list
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_extend = fn: 'a list * 'a -> 'a list
+val list_foldl = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldleft = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_foldr = fn: 'a list * 'b * ('a * 'b -> 'b) -> 'b
+val list_foldright = fn: 'a list * 'b * ('b * 'a -> 'b) -> 'b
+val list_forall = fn: 'a list * ('a -> bool) -> bool
+val list_foreach = fn: 'a list * ('a -> unit) -> unit
+val list_fromto = fn: int * int -> int list
+val list_head = fn: 'a list -> 'a
+val list_headopt = fn: 'a list -> 'a optn
+val list_is_cons = fn: 'a list -> bool
+val list_is_nil = fn: 'a list -> bool
+val list_labelize = fn: 'a list -> (int * 'a) list
+val list_last = fn: 'a list -> 'a
+val list_length = fn: 'a list -> int
+val list_map = fn: 'a list * ('a -> 'b) -> 'b list
+val list_rappend = fn: 'a list * 'a list -> 'a list
+val list_reverse = fn: 'a list -> 'a list
+val list_tail = fn: 'a list -> 'a list
+val list_tailopt = fn: 'a list -> 'a list optn
+val list_uncons = fn: 'a list -> 'a * 'a list
+val list_unnil = fn: 'a list -> unit
+val list_z2foreach = fn: 'a list * 'b list * ('a * 'b -> unit) -> unit
+val list_zip = fn: 'a list * 'b list -> ('a * 'b) list
+eqtype 'a optn
+val optn_is_none = fn: 'a optn -> bool
+val optn_is_some = fn: 'a optn -> bool
+val optn_unnone = fn: 'a optn -> unit
+val optn_unsome = fn: 'a optn -> 'a
+val pow_int_int = fn: int * int -> int
+val print_bool = fn: bool -> unit
+val print_char = fn: char -> unit
+val print_int = fn: int -> unit
+val print_newline = fn: unit -> unit
+val print_string = fn: string -> unit
+val println = fn: string -> unit
+val println_string = fn: string -> unit
+val string_foldleft = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foldright = fn: string * 'a * ('a * char -> 'a) -> 'a
+val string_foreach = fn: string * (char -> unit) -> unit
+val tl = fn: 'a list -> 'a list
+val it = (): unit
+type ('a, 'b) exists_t = 'a * ('b -> bool) -> bool
+type ('a, 'b) forall_t = 'a * ('b -> bool) -> bool
+val forall_to_exists = fn: ('a, 'b) forall_t -> ('a, 'b) exists_t
+val it = (): unit
+Assign02-07-test passed!
+val list_exists = fn: 'a list * ('a -> bool) -> bool
+val list_exists' = fn: 'a list * ('a -> bool) -> bool
+val list_forall' = fn: 'a list * ('a -> bool) -> bool
+val p1 = fn: int -> bool
+val p2 = fn: int -> bool
+val p3 = fn: int -> bool
+val p4 = fn: int -> bool
+val power = fn: int * int -> int
+val xs = [1, 2, 3, 4, 5]: int list
+val it = (): unit
