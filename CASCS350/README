@@ -1,1 +1,3 @@
+Programming-centric introduction to computer systems. The course discusses system design principles, performance analysis, communication and synchronization primitives, concurrency control, database transactions, data consistency, task and data parallelism, replication, fault tolerance, and distributed consensus. Part of the discussion includes case studies of real systems from industry. All programming assignments will be in Go.
+
 
