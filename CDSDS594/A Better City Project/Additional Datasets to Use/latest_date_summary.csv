@@ -1,0 +1,13 @@
+date,route_id,total_trips,early_am_trips,peak_am_trips,midday_trips,peak_pm_trips,evening_pm_trips,late_pm_trips,local_trips,express_trips,typical_trips,atypical_trips
+2022-08-10,CR-Lowell,43,4,8,14,8,7,2,43,0,43,0
+2022-08-10,CR-Needham,32,2,6,13,6,4,1,31,1,32,0
+2022-08-10,CR-Franklin,38,2,8,14,8,4,2,1,37,38,0
+2022-08-10,CR-Kingston,26,1,5,11,5,2,2,24,2,26,0
+2022-08-10,CR-Fairmount,47,5,8,16,8,8,2,47,0,47,0
+2022-08-10,CR-Fitchburg,34,1,7,15,6,4,1,30,4,34,0
+2022-08-10,CR-Greenbush,26,1,5,12,5,2,1,26,0,26,0
+2022-08-10,CR-Haverhill,45,2,10,19,9,4,1,23,22,45,0
+2022-08-10,CR-Worcester,42,4,8,10,12,5,3,12,30,0,42
+2022-08-10,CR-Providence,72,6,14,25,14,11,2,3,69,72,0
+2022-08-10,CR-Newburyport,57,4,10,24,10,7,2,57,0,57,0
+2022-08-10,CR-Middleborough,30,3,5,10,5,6,1,30,0,30,0
