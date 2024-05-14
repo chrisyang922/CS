@@ -1,0 +1,39 @@
+date,time,trip_id,line_id,route_id,route_pattern_id,route_name,route_pattern_name,service_id,service_typicality,direction,from_station,to_station
+2019-10-10,18:00:00,CR-Foxboro-Sunday-2020-9781,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-2020,2,0,South Station,Foxboro
+2019-10-27,14:00:00,CR-Foxboro-Sunday-1625-9743,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-1625,2,0,South Station,Foxboro
+2019-11-24,14:00:00,CR-Foxboro-Sunday-1625-9743,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-1625,2,0,South Station,Foxboro
+2019-12-08,14:00:00,CR-Foxboro-Sunday-1625-9743,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-1625,2,0,South Station,Foxboro
+2019-12-21,14:00:00,CR-Foxboro-Sunday-1625-9743,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-1625,2,0,South Station,Foxboro
+2019-12-29,10:15:00,CR-Foxboro-Sunday-1300-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-1300,2,0,South Station,Foxboro
+2020-01-04,17:50:00,CR-Foxboro-Sunday-2030-9783,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station - Foxboro via Back Bay & Dedham,CR-Foxboro-Su-2030,2,0,South Station,Foxboro
+2021-09-12,14:10:00,CR-Foxboro16:25-0-14:10:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station or Foxboro - Foxboro or Providence,SPR21-S-Su-Fx5,4,0,South Station,Foxboro
+2021-09-26,10:35:00,CR-Foxboro13:00-0-10:35:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station or Foxboro - Foxboro or Providence,SPR21-S-Su-Foxboro13:00,4,0,South Station,Foxboro
+2021-10-03,18:10:00,CR-Foxboro20:20-0-18:10:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-0,Foxboro Event Service,South Station or Foxboro - Foxboro or Providence,SPR21-S-Su-Fx0,4,0,South Station,Foxboro
+2021-08-12,17:10:00,CR-FoxboroPreseason-9771,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,SPR21-S-Wdy-FxrPrn,4,0,South Station,Foxboro
+2021-10-17,14:10:00,CR-508721-9743,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-76,4,0,South Station,Foxboro
+2021-10-24,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-75,4,0,South Station,Foxboro
+2021-11-14,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-75,4,0,South Station,Foxboro
+2021-11-25,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-75,4,0,South Station,Foxboro
+2021-11-28,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-75,4,0,South Station,Foxboro
+2021-12-26,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FLL 21-S-Su-75,4,0,South Station,Foxboro
+2022-01-02,10:35:00,CR-508723-9711,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,FALL 2021-S-Su-75,4,0,South Station,Foxboro
+2022-07-27,18:05:00,CR-544876-9781,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,SPR22-S-Wdy-82,4,0,South Station,Foxboro
+2022-07-28,18:05:00,CR-544876-9781,line-Foxboro,CR-Foxboro,CR-Foxboro-ee315553-0,Foxboro Event Service,South Station - Foxboro,SPR22-S-Wdy-82,4,0,South Station,Foxboro
+2021-09-12,13:35:00,CR-Foxboro16:25-1-13:35:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-1,Foxboro Event Service,Foxboro or Providence - South Station or Foxboro,SPR21-S-Su-Fx5,4,1,Providence,Foxboro
+2021-09-26,10:20:00,CR-Foxboro13:00-1-10:20:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-1,Foxboro Event Service,Foxboro or Providence - South Station or Foxboro,SPR21-S-Su-Foxboro13:00,4,1,Providence,Foxboro
+2021-10-03,17:35:00,CR-Foxboro20:20-1-17:35:00,line-Foxboro,CR-Foxboro,CR-Foxboro-0-1,Foxboro Event Service,Foxboro or Providence - South Station or Foxboro,SPR21-S-Su-Fx0,4,1,Providence,Foxboro
+2019-10-10,17:00:00,CR-Foxboro-Sunday-2020-9880,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-2020,2,1,Providence,Foxboro
+2019-10-27,14:00:00,CR-Foxboro-Sunday-1625-9842,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-1625,2,1,Providence,Foxboro
+2019-11-24,14:00:00,CR-Foxboro-Sunday-1625-9842,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-1625,2,1,Providence,Foxboro
+2019-12-08,14:00:00,CR-Foxboro-Sunday-1625-9842,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-1625,2,1,Providence,Foxboro
+2019-12-21,14:00:00,CR-Foxboro-Sunday-1625-9842,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-1625,2,1,Providence,Foxboro
+2019-12-29,10:30:00,CR-Foxboro-Sunday-1300-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-1300,2,1,Providence,Foxboro
+2020-01-04,17:55:00,CR-Foxboro-Sunday-2030-9882,line-Foxboro,CR-Foxboro,CR-Foxboro-1-1,Foxboro Event Service,Providence - Foxboro,CR-Foxboro-Su-2030,2,1,Providence,Foxboro
+2021-08-12,16:45:00,CR-FoxboroPreseason-9872,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,SPR21-S-Wdy-FxrPrn,4,1,Providence,Foxboro
+2021-10-17,13:35:00,CR-508722-9842,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-76,4,1,Providence,Foxboro
+2021-10-24,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-75,4,1,Providence,Foxboro
+2021-11-14,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-75,4,1,Providence,Foxboro
+2021-11-25,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-75,4,1,Providence,Foxboro
+2021-11-28,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-75,4,1,Providence,Foxboro
+2021-12-26,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FLL 21-S-Su-75,4,1,Providence,Foxboro
+2022-01-02,10:20:00,CR-508724-9810,line-Foxboro,CR-Foxboro,CR-Foxboro-26725160-1,Foxboro Event Service,Providence - Foxboro,FALL 2021-S-Su-75,4,1,Providence,Foxboro
